@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head lang="es">
+	<title>Videos - Krtpowa</title>
+	<meta charset="utf-8" />
+	<script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+</head>
+<body>
+
+<video width="320" height="240" controls preload="auto">
+  <source id="numerovideo" src="" type="video/mp4">
+  Your browser does not support the video tag.
+</video> 
+	<script> // ejemplo localhost:8080?num=28  se añade 28 al atributo src del source de video
+			$.urlParam = function(name){
+		    var results = new RegExp('[\\?&amp;]' + name + '=([^&amp;#]*)').exec(window.location.href);
+		    return results[1] || 0;
+			}
+			numero = ($.urlParam('num'));
+			$("#numerovideo").attr("src", numero +".mp4");
+	</script>
+</body>
+</html>
